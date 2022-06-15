@@ -37,7 +37,7 @@ body {
 .form2{
     padding-top: 10px;
     padding-bottom: 5px;
-    width: 370px;
+    width: 400px;
 }
 
 .legend2{
@@ -79,7 +79,7 @@ body {
     position: relative;
     color: rgb(5, 5, 116);
     font-size: 30px;
-    transform: translate(48.8%, -150%);
+    transform: translate(55%, -150%);
 }
 
 .fahrenheit_label{
@@ -92,7 +92,7 @@ body {
     text-align: center;
     font-size: 24px;
     width: 100px;
-    transform: translate(160%, -150%);
+    transform: translate(190%, -150%);
 }
 
 .clear {
@@ -100,7 +100,7 @@ body {
     background-color: rgb(140, 211, 205);
     font-size: 15px;
     font-weight: bolder;
-    position: absolute;
+    position: relative;
     transform: translate(550%, -200%);
     border-radius: 20%;
     border-style: groove;
@@ -112,8 +112,49 @@ body {
     height: 35px;
     z-index: 2;
     border-style: groove;
+    position: relative;
 }
 
-/* .flip {
-    transform: translate(0%, -100%);   
+.flip {
+    transform: translate(0%, 10%);   
+}
+
+/* .celsius2{
+    position: relative;
+    color: rgb(5, 5, 116);
+    font-size: 30px;
+    transform: translate(48.8%, -150%);
+}
+
+.celsius_label2{
+    background-color: transparent;
+    border-style:inset;
+    border-width: 2px;
+    border-color:rgb(156, 11, 11);
+    border-radius: 5px;
+    color: rgb(183, 10, 125);
+    text-align: center;
+    font-size: 24px;
+    width: 100px;
+    transform: translate(160%, -150%);
+}
+
+.fahrenheit2{
+    position: relative;
+    color: rgb(156, 11, 11);
+    font-size: 30px;
+    transform: translate(3%, 50%);
+}
+
+.fahrenheit_label2{
+    background-color: transparent;
+    border-style:inset;
+    border-width: 2px;
+    border-color: rgb(5, 5, 116);
+    border-radius: 5px;
+    color: green;
+    text-align:center;
+    font-size: 24px;
+    width: 100px;
+    transform: translate(10%, 45%);
 } */
