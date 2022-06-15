@@ -1,0 +1,119 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:darkgray;
+}
+
+.btn{
+    color:black;
+    background-color: rgb(16, 177, 164);
+    font-size: 30pt;
+    font-weight: bolder;
+    position: relative;
+    transform: translate(150%, 60%);
+    border-radius: 30%;
+}
+
+#container{
+    width: 400px;
+    height: 320px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(235, 231, 231);
+    transform: translate(95% , 30%);
+}
+
+.form1{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 250px;
+}
+
+.legend1{
+    font-size: 20px;
+
+}
+
+.form2{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 370px;
+}
+
+.legend2{
+    font-size: 20px;
+}
+
+.radio1 {
+    font: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.radio2{
+    font: 20px;
+    padding-bottom: 3px;
+}
+
+.celsius{
+    position: relative;
+    color: rgb(156, 11, 11);
+    font-size: 30px;
+    transform: translate(3%, 50%);
+}
+
+.celsius_label{
+    background-color: transparent;
+    border-style:inset;
+    border-width: 2px;
+    border-color: rgb(5, 5, 116);
+    border-radius: 5px;
+    color: green;
+    text-align:center;
+    font-size: 24px;
+    width: 100px;
+    transform: translate(10%, 45%);
+}
+
+.fahrenheit{
+    position: relative;
+    color: rgb(5, 5, 116);
+    font-size: 30px;
+    transform: translate(48.8%, -150%);
+}
+
+.fahrenheit_label{
+    background-color: transparent;
+    border-style:inset;
+    border-width: 2px;
+    border-color:rgb(156, 11, 11);
+    border-radius: 5px;
+    color: rgb(183, 10, 125);
+    text-align: center;
+    font-size: 24px;
+    width: 100px;
+    transform: translate(160%, -150%);
+}
+
+.clear {
+    color:black;
+    background-color: rgb(140, 211, 205);
+    font-size: 15px;
+    font-weight: bolder;
+    position: absolute;
+    transform: translate(550%, -200%);
+    border-radius: 20%;
+    border-style: groove;
+}
+
+.convert_button{
+    transform: translate(150%, -140%);
+    border-radius: 15px;
+    height: 35px;
+    z-index: 2;
+    border-style: groove;
+}
+
+/* .flip {
+    transform: translate(0%, -100%);   
+} */
