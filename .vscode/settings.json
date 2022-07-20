@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "html.format.endWithNewline": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

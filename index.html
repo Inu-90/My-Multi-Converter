@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="multiconverter.css">
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700;900&family=Varela+Round&display=swap" rel="stylesheet">
 
-    <title>Multi Converter</title>
+<link type="text/css" rel="stylesheet" href="multiconverter.css">
+
+<title>Multi Converter</title>
 
 </head>
 
 <body>
-    <div><button class="btn">Multi Converter</button></div>
-
-    <div id = "container">
-  <div >
+    <section class="temperature">
+ <div class = "panel1">
 
     <form class ="form1">
 
-        <fieldset>
-            <legend class="legend1">Conversion Option</legend>
-                <div class="radio1">
-                    <input type="radio" name="radiobtn" class="radio_celsius">
-                    <label class="rad1">Celsius to Fahrenheit</label>
-                </div>
+        <fieldset class="fieldset">
+            <legend class="legend">Conversion Option</legend>
+                
+             <label class="radio1">
+                    <input type="radio" name="radiobtn" class="radio_celsius radio" />Celsius to Fahrenheit
+                </label>
 
-            <div class= "radio2">
-                <input type="radio" name="radiobtn" class="radio_fahrenheit">
-                <label>Fahrenheit to Celsius</label>
-            </div>
+             <label class= "radio2">
+                <input type="radio" name="radiobtn" class="radio_fahrenheit radio" />Fahrenheit to Celsius
+             </label>  
         </fieldset>
     </form>
-
+    
     <form class= "form2">
-    <fieldset>
-        <legend class="legend2">Perform Conversion</legend>
-        <div class="flip1">
-        <div class="celsius">&#186Celsius</div>
-        <input type="number" class="celsius_label" value = "0.0" disabled>
+    <fieldset class="fieldset">
+        <legend class="legend">Perform Conversion</legend>
+        <div class="perfom_conversion">
         
-        <div class="fahrenheit">&#186Fahrenheit</div>
-        <input type="number" class= "fahrenheit_label" value = "0.0" disabled>
+    <div class="flip1">
+        <div class= "celsius">&#186Celsius</div>
+        <div class= "fahrenheit">&#186Fahrenheit</div>
+        <input type= "number" class= "celsius_label" value = "0.0" disabled>
+        <input type= "number" class= "fahr fahrenheit_label" value = "0.0" disabled>
     </div>
 
     <div class = "flip2" style = "display: none;">    
         <div class="celsius">&#186Fahrenheit</div>
+        <div class="fahr1 fahrenheit">&#186Celsius</div>
         <input type="number" class="celsius_label" id = "celsius_label2" value = "0.0" disabled>
-        
-        <div class="fahrenheit">&#186Celsius</div>
-        <input type="number" class= "fahrenheit_label" id = "fahrenheit_label2" value = "0.0" disabled>
+        <input type= "number" class= "fahr2 fahrenheit_label" id = "fahrenheit_label2" value = "0.0" disabled>
     </div>
 
     </fieldset>
     </form>
     
-
-    <img class = convert_button src="images/arrows.png">
-</div>
-    <button class="clear">Clear</button>
-    </div>
-    <script src="converter.js"></script>
+    <button class= "buttons convert">Convert</button>
+   <button class="buttons reset">reset</button>
+ </div>
+  </section>
