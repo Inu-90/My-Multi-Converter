@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<main>
     <section class="temperature">
  <div class = "panel1">
 
@@ -56,11 +57,71 @@
     </fieldset>
 </form>
     
-    <button class= "buttons convert">Convert</button>
-   <button class="buttons reset">reset</button>
+    <button class= "buttons1 convert1">Convert</button>
+   <button class="buttons1 reset1">reset</button>
  </div>
   </section>
 
-  <script src="converter.js"></script>
+
+
+
+
+
+<!-- MASS !-->
+
+<section class="panel2">
+    <form name="mass">
+        <div class="from_container">
+            <label for="mass" class="from">From:</label>
+        <select name="select-from" class="select_option select-from">
+             <option value="">Select</option>
+            <option value="kilogram" class="kg1 KT">Killogram</option>
+            <option value="tonne">Tonne (Metric ton)</option>
+            <option value="gram">Gram</option>
+            <option value="milligram">Milligram</option>
+            <option value="microgram">Microgram</option>
+            <option value="imperial-ton">Imperial ton</option>
+            <option value="us-ton">US ton</option>
+            <option value="stone">Stone</option>
+            <option value="pound">Pound</option>
+            <option value="ounce">Ounce</option>
+        </select>
+
+
+        <div class= "from_input">
+        <input type= "number" class= "from_label" value = "0">
+        </div>
+    </form> 
+  </div>
+
+    <form class="to_container">
+        <label for="mass" class="to">To:</label>
+        <select name="weights" class="select_option select-to" id= "mySelect">
+            <option value="">Select</option>
+            <option value="tonne">Tonne (Metric ton)</option>
+            <option value="kilogram">kilogram</option>
+            <option value="gram">Gram</option>
+            <option value="milligram">Milligram</option>
+            <option value="microgram">Microgram</option>
+            <option value="imperial-ton">Imperial ton</option>
+            <option value="us-ton">US ton</option>
+            <option value="stone">Stone</option>
+            <option value="pound">Pound</option>
+            <option value="ounce">Ounce</option>
+        </select>
+        
+        <div class= "to_output">
+        <input type= "number" class= "to_label" value = "0" disabled>
+        </div>
+    </form>
+        
+    <button type="submit" class= "buttons2 convert2 convert-btn">Convert</button>
+   <button class="buttons2 reset2 reset-btn">reset</button>
+ </div>
+  </section>
+</main>
+
+<script src="converter.js"></script>
+
 </body>
-</html>
+</html> 
