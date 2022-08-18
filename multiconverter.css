@@ -3,7 +3,6 @@
 main {
   display: flex;
   flex-direction: row;
-  gap: 10px;
 }
 
 .body {
@@ -220,53 +219,49 @@ main {
 }
 
 
-.temperature-alert-display {
+.temperature-alert {
   display: block;
   position: relative;
-  font: 10px;
-  color:  #def2e4;
+  font: 24px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  color:  #180552;
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #0b392b;
+  background-color: #cc5de8;
   gap: 20px;
   padding: 20px;
   height: 100px;
   width: 200px;
   z-index: 5;
-  transform: translate(0%, -255%);
+  transform: translate(15%, -255%);
   border-radius: 10px;
   box-shadow: 10px 20px 500px 10px rgba(0, 0, 0, 0.2);
-   opacity: 0.8;
+   opacity: .9;
 }
 
 
 .temperature-alert-button {
-  color: #def2e4;
-  background-color: #0c6349;;
+  color: #d1bfc9;
+  background-color: #3f20a6;;;
   font-size: 24px;
   font-weight: bold;
   border-radius: 25px;
   border: outset 3px;
   padding: 2px 0;
   width: 100px;
-  margin-top: 20px;
-  margin-right: 40px;
-  margin-left: 40px;
+  margin-top: 0px;
+  margin-right: 50px;
+  margin-left: 50px;
   border-radius: 10px;
   opacity: 1;
 }
 
-.alert-button:hover {
+.temperature-alert-button:hover {
   color: #def2e4;
+  background-color: #3412bd;
 }
-
-.alert-button:active {
-   background-color: #022b1f;
-} 
-
-     
-
 
 
 
@@ -295,7 +290,6 @@ main {
 
 }
 
-
 .from{
   color: rgb(12, 120, 81);
   font-size: 18px;
@@ -318,13 +312,15 @@ main {
   background-color: #dfeee9;
   color:  #16a57a;
   font-weight: 800;
-  font-size: 24px;
   border: #e6faf4 inset 2px;
   text-align: center;
   width: 200px;
   height: 40px;
   border-radius: 10px;
 }
+
+.from-input {font-size: 32px;}
+.to-output {font-size: 24px;}
 
 
 .select_option{
@@ -362,7 +358,7 @@ main {
 .units {
   color:  #16a57a;
   font-weight: 800;
-  font-size: 22px;
+  font-size: 24px;
   margin: 0;
   padding: 0;
   transform: translate(83%, -135%);

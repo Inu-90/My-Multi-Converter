@@ -1,71 +1,95 @@
-// function temperature () {
-// CELSIUS SELECTORS
-let celsiusSelect = document.querySelector(".radio_celsius");
-let celsiusInput = document.querySelector(".celsius_label");
-let celsiusInput2 = document.getElementById("celsius_label2");
+ function temperature() {
+  // CELSIUS SELECTORS
+  let celsiusSelect = document.querySelector(".radio_celsius");
+  let celsiusInput = document.querySelector(".celsius_label");
+  let celsiusInput2 = document.getElementById("celsius_label2");
 
-// FAHRENHEIT SELECTORS
-let fahrenheitSelect = document.querySelector(".radio_fahrenheit");
-let fahrenheitInput = document.querySelector(".fahrenheit_label");
-let fahrenheitInput2 = document.getElementById("fahrenheit_label2");
+  // FAHRENHEIT SELECTORS
+  let fahrenheitSelect = document.querySelector(".radio_fahrenheit");
+  let fahrenheitInput = document.querySelector(".fahrenheit_label");
+  let fahrenheitInput2 = document.getElementById("fahrenheit_label2");
 
-// convert AND reset SELECTORS
-let convert = document.querySelector(".convert1");
-let reset = document.querySelector(".reset1");
+  // convert AND reset SELECTORS
+  let convert = document.querySelector(".convert1");
+  let reset = document.querySelector(".reset1");
 
-// SWIPE SELECTORS
-let flip1 = document.querySelector(".flip1");
-let flip2 = document.querySelector(".flip2");
+  // SWIPE SELECTORS
+  let flip1 = document.querySelector(".flip1");
+  let flip2 = document.querySelector(".flip2");
 
-//CELSIUS CONTROLLER
-celsiusSelect.addEventListener("click", () => {
-  flip1.style.display = "grid";
-  flip2.style.display = "none";
-  celsiusInput.disabled = false;
-});
+  //ALERT BUTTONS SELECTORS
+  let tempAlertDiplay = document.querySelector(".temperature-alert");
+  let tempAlertDiplayBtn = document.querySelector(".temperature-alert-button");
+    
+  //CELSIUS CONTROLLER
+  celsiusSelect.addEventListener("click", () => {
+    flip1.style.display = "grid";
+    flip2.style.display = "none";
+    celsiusInput.disabled = false;
+  });
 
-// FAHRENHEIT CONTROLLER
-fahrenheitSelect.addEventListener("click", () => {
-  flip1.style.display = "none";
-  flip2.style.display = "grid";
-  celsiusInput2.disabled = false;
-  fahrenheitInput2.disabled = true;
-});
+  // FAHRENHEIT CONTROLLER
+  fahrenheitSelect.addEventListener("click", () => {
+    flip1.style.display = "none";
+    flip2.style.display = "grid";
+    celsiusInput2.disabled = false;
+    fahrenheitInput2.disabled = true;
+  });
 
-convert.addEventListener("click", () => {
-  if (flip1.style.display === "grid" && flip2.style.display === "none") {
-    const fahr = 1.8 * celsiusInput.value + 32;
-    fahrenheitInput.value = fahr.toFixed(2);
-  } else if (flip2.style.display === "grid" && flip1.style.display === "none") {
-    const cels = (celsiusInput2.value - 32) / 1.8;
-    fahrenheitInput2.value = cels.toFixed(2);
-  }
-});
+   convert.addEventListener("click", () => {
+     
+     if (document.querySelector('input[name="radiobtn"]:checked') === null) {
+       tempAlertDiplay.style.display = "block";
+       celsiusSelect.disabled = true;
+       fahrenheitSelect = true;
 
-document.addEventListener("keypress", (event) => {
-  if (
-    event.keyCode === 13 &&
-    flip1.style.display === "grid" &&
-    flip2.style.display === "none"
-  ) {
-    const fahr = 1.8 * celsiusInput.value + 32;
-    fahrenheitInput.value = fahr.toFixed(2);
-  } else if (
-    event.keyCode === 13 &&
-    flip2.style.display === "grid" &&
-    flip1.style.display === "none"
-  ) {
-    const cels = (celsiusInput2.value - 32) / 1.8;
-    fahrenheitInput2.value = cels.toFixed(2);
-  }
-});
 
-reset.addEventListener("click", (event) => {
-  celsiusInput.value = "0.0";
-  fahrenheitInput.value = "0.0";
-  celsiusInput2.value = "0.0";
-  fahrenheitInput2.value = "0.0";
-});
+       tempAlertDiplayBtn.addEventListener("click", () => {
+         tempAlertDiplay.style.display = "none";
+         celsiusSelect.disabled = false;
+         fahrenheitSelect = false;
+       });
+     }
+     if (flip1.style.display === "grid" && flip2.style.display === "none") {
+      const fahr = 1.8 * celsiusInput.value + 32;
+      fahrenheitInput.value = fahr.toFixed(2);
+    } else if (flip2.style.display === "grid" && flip1.style.display === "none") {
+      const cels = (celsiusInput2.value - 32) / 1.8;
+      fahrenheitInput2.value = cels.toFixed(2);
+     }
+  });
+   
+
+   document.querySelector('input[name="radiobtn"]:checked');
+   
+  document.addEventListener("keypress", (event) => {
+    if (
+      event.keyCode === 13 &&
+      flip1.style.display === "grid" &&
+      flip2.style.display === "none"
+    ) {
+      const fahr = 1.8 * celsiusInput.value + 32;
+      fahrenheitInput.value = fahr.toFixed(2);
+    } else if (
+      event.keyCode === 13 &&
+      flip2.style.display === "grid" &&
+      flip1.style.display === "none"
+    ) {
+      const cels = (celsiusInput2.value - 32) / 1.8;
+      fahrenheitInput2.value = cels.toFixed(2);
+    }
+  });
+
+
+  reset.addEventListener("click", () => {
+    celsiusInput.value = "0.0";
+    fahrenheitInput.value = "0.0";
+    celsiusInput2.value = "0.0";
+    fahrenheitInput2.value = "0.0";
+  });
+   
+
+} temperature();
 
 // Weight Selectors
 let convertWeight = document.querySelector(".convert-btn");
@@ -78,12 +102,8 @@ let fromUnit = document.querySelector(".from-units");
 let toUnit = document.querySelector(".to-units");
 let alertDiplay = document.querySelector('.alert-display');
 let alertBtn = document.querySelector('.alert-button');
-
 let massParams = ['tonne', 'kilogram', 'gram', 'milligram', 'microgram', 'imperial-ton', 'us-ton', 'stone', 'pound', 'ounce'];
-console.log(massParams[9]);
 let massParamsUnits = ['t', 'kg', 'g', 'mg', 'μg', 't', 't', 'st', 'lb', 'oz'];
-console.log(massParamsUnits[9]);
-
 let fromValue, toValue;
 
 // Weight Conversion
@@ -189,11 +209,8 @@ convertWeight.addEventListener("click", () => {
   if (fromValue === "tonne" && toValue === "ounce") {
     toDisplay.value = fromInput.value * 35274;
   }
-  if (fromValue === "tonne") {
-    fromUnits = "t";
-   }
+ 
    
-
   // Kilogram
   if (fromValue === "kilogram" && toValue === "kilogram") {
     toDisplay.value = fromInput.value;
@@ -485,9 +502,12 @@ if (fromValue === "stone" && toValue === "ounce") {
   
   if (fromValue === undefined || toValue === undefined) {
     alertDiplay.style.display = 'block';
+    fromInput.disabled = true;
   }
   alertBtn.addEventListener('click', () => {
     alertDiplay.style.display = 'none';
+    fromInput.disabled = false;
+
   })
 });
 
