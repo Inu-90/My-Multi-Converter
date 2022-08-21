@@ -17,8 +17,8 @@
 
 <body>
 <main>
-    <section class="temperature">
- <div class = "panel1">
+    <section class="temperature"  style="display:none;">
+ <div class = "-temperature-panel">
 
     <form class ="form1">
 
@@ -68,14 +68,9 @@
  
   </section>
 
-
-
-
-
-
 <!-- MASS !-->
 
-<section class="panel2">
+<section class="mass-panel" style="display:none;">
     <form name="mass">
         <div class="from_container">
             <label for="mass" class="from">From:</label>
@@ -132,6 +127,63 @@
         </div>
         
   </section>
+
+
+<!-- Time conversion -->
+
+<section class="time-panel">
+    <form name="time">
+        <div class="container-from">
+        <select name="time" class="select_option select-from-time">
+            <option value="Second">Second</option>
+            <option value="nanosecond">Nanosecond</option>
+            <option value="microsecond">Microsecond</option>
+            <option value="millsecond">Millsecond</option>
+            <option value="minute">Minute</option>
+            <option value="hour">Hour</option>
+            <option value="day">Day</option>
+            <option value="week">Week</option>
+            <option value="Month">Month</option>
+            <option value="calendar-year">Calendar year</option>
+            <option value="decade">Decade</option>
+            <option value="century">Century</option>
+        </select>
+
+        <div class= "from-time-input">
+        <input type= "number" name="time-from" class= "time-input-labels time-from-input" placeholder="0"/>
+        </div>
+    </form> 
+  </div>
+
+
+ <form class="container-to">
+            <select name="time" class="select_option select-to-time" id= "mySelect">
+            <option value="minute">Minute</option>
+            <option value="nanosecond">Nanosecond</option>
+            <option value="microsecond">Microsecond</option>
+            <option value="millsecond">Millsecond</option>
+            <option value="Second">Second</option>
+            <option value="hour">Hour</option>
+            <option value="day">Day</option>
+            <option value="week">Week</option>
+            <option value="Month">Month</option>
+            <option value="calendar-year">Calendar year</option>
+            <option value="decade">Decade</option>
+            <option value="century">Century</option>
+        </select>
+        
+        <div class= "to_output">
+        <input type= "number" class= "input-labels time-to-input" placeholder="0">
+        </div>
+    </form>
+        
+   <button class="buttons2 reset2 reset-btn time-clear-btn">Clear</button>
+ </div>
+        
+  </section>
+
+
+
 </main>
 
 <script src="converter.js"></script>
