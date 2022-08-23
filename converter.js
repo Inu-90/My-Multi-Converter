@@ -1,4 +1,4 @@
- function temperature() {
+function temperature() {
   // CELSIUS SELECTORS
   let celsiusSelect = document.querySelector(".radio_celsius");
   let celsiusInput = document.querySelector(".celsius_label");
@@ -20,7 +20,7 @@
   //ALERT BUTTONS SELECTORS
   let tempAlertDiplay = document.querySelector(".temperature-alert");
   let tempAlertDiplayBtn = document.querySelector(".temperature-alert-button");
-    
+
   //CELSIUS CONTROLLER
   celsiusSelect.addEventListener("click", () => {
     flip1.style.display = "grid";
@@ -36,32 +36,32 @@
     fahrenheitInput2.disabled = true;
   });
 
-   convert.addEventListener("click", () => {
-     
-     if (document.querySelector('input[name="radiobtn"]:checked') === null) {
-       tempAlertDiplay.style.display = "block";
-       celsiusSelect.disabled = true;
-       fahrenheitSelect = true;
+  convert.addEventListener("click", () => {
+    if (document.querySelector('input[name="radiobtn"]:checked') === null) {
+      tempAlertDiplay.style.display = "block";
+      celsiusSelect.disabled = true;
+      fahrenheitSelect = true;
 
-
-       tempAlertDiplayBtn.addEventListener("click", () => {
-         tempAlertDiplay.style.display = "none";
-         celsiusSelect.disabled = false;
-         fahrenheitSelect = false;
-       });
-     }
-     if (flip1.style.display === "grid" && flip2.style.display === "none") {
+      tempAlertDiplayBtn.addEventListener("click", () => {
+        tempAlertDiplay.style.display = "none";
+        celsiusSelect.disabled = false;
+        fahrenheitSelect = false;
+      });
+    }
+    if (flip1.style.display === "grid" && flip2.style.display === "none") {
       const fahr = 1.8 * celsiusInput.value + 32;
       fahrenheitInput.value = fahr.toFixed(2);
-    } else if (flip2.style.display === "grid" && flip1.style.display === "none") {
+    } else if (
+      flip2.style.display === "grid" &&
+      flip1.style.display === "none"
+    ) {
       const cels = (celsiusInput2.value - 32) / 1.8;
       fahrenheitInput2.value = cels.toFixed(2);
-     }
+    }
   });
-   
 
-   document.querySelector('input[name="radiobtn"]:checked');
-   
+  document.querySelector('input[name="radiobtn"]:checked');
+
   document.addEventListener("keypress", (event) => {
     if (
       event.keyCode === 13 &&
@@ -80,16 +80,14 @@
     }
   });
 
-
   reset.addEventListener("click", () => {
     celsiusInput.value = "0.0";
     fahrenheitInput.value = "0.0";
     celsiusInput2.value = "0.0";
     fahrenheitInput2.value = "0.0";
   });
-   
-
-} temperature();
+}
+temperature();
 
 function weight() {
   // Weight Selectors
@@ -538,41 +536,240 @@ function weight() {
 }
 weight();
 
-let timeFromSelect = document.querySelector(".select-from-time");
-// let timeFromDisplay = document.querySelector("input");
+let inputNanosecond = document.querySelector(".nanosecond");
+let inputMicrosecond = document.querySelector(".microsecond");
+let inputMillisecond = document.querySelector(".millisecond");
+let inputSecond = document.querySelector(".second");
+let inputMinute = document.querySelector(".minute");
+let inputHour = document.querySelector(".hour");
+let inputDay = document.querySelector(".day");
+let inputWeek = document.querySelector(".week");
+let inputMonth = document.querySelector(".month");
+let inputCalendarYear = document.querySelector(".calendar-year");
+let inputDecade = document.querySelector(".decade");
+let inputCentury = document.querySelector(".century");
+let btnClear = document.querySelector(".clear-time-btn");
 
-let timeToSelect = document.querySelector(".select-to-time");
-let timeClearbtn = document.querySelector(".time-clear-btn");
-// let timeToDisplay = document.querySelector(".time-to-input");
+//TIME CONVERSIONS
 
+// Nanoseconds
+inputNanosecond.addEventListener("input", (e) => {
+  let valNanoSeconds = e.target.value;
 
-let timeParameters = ["minute", "nanosecond", "microsecond", "millsecond", "Second", "hour", "day", "week", "Month", "calendar-year", "decade", "century"];
-console.log(timeParameters[1]);
-
-
-timeFromSelect.addEventListener("change", (e) => {
-  let fromTimeValue = e.target.value;
-  console.log(timeToDisplay.value);
+  inputMicrosecond.value = valNanoSeconds / 1000;
+  inputMillisecond.value = (valNanoSeconds / 1000000).toExponential(0);
+  inputSecond.value = (valNanoSeconds / 1000000000).toExponential(0);
+  inputMinute.value = (valNanoSeconds / 60000000000).toExponential(4);
+  inputHour.value = (valNanoSeconds / 3600000000000).toExponential(4);
+  inputDay.value = (valNanoSeconds / 86400000000000).toExponential(4);
+  inputWeek.value = (valNanoSeconds / 6.048).toExponential(4);
+  inputMonth.value = (valNanoSeconds / 2.628).toExponential(4);
+  inputCalendarYear.value = (valNanoSeconds / 3.154).toExponential(3);
+  inputDecade.value = (valNanoSeconds / 3.154).toExponential(3);
+  inputCentury.value = (valNanoSeconds / 3154000000000000000).toExponential(3);
 });
 
-timeToSelect.addEventListener("change", (e) => {
-  let toTimeValue = e.target.value;
-  console.log(toTimeValue);
+// Microseconds
+inputMicrosecond.addEventListener("input", (e) => {
+  let valmicroSeconds = e.target.value;
+
+  inputNanosecond.value = valmicroSeconds * 1000;
+  inputMillisecond.value = valmicroSeconds / 1000;
+  inputSecond.value = (valmicroSeconds / 1000000).toExponential(0);
+  inputMinute.value = (valmicroSeconds / 60000000).toExponential(4);
+  inputHour.value = (valmicroSeconds / 3600000000).toExponential(4);
+  inputDay.value = (valmicroSeconds / 86400000000).toExponential(4);
+  inputWeek.value = (valmicroSeconds / 604800000000).toExponential(4);
+  inputMonth.value = (valmicroSeconds / 2628000000000).toExponential(4);
+  inputCalendarYear.value = (valmicroSeconds / 31540000000000).toExponential(3);
+  inputDecade.value = (valmicroSeconds / 315400000000000).toExponential(3);
+  inputCentury.value = (valmicroSeconds / 3154000000000000).toExponential(3);
 });
 
-timeClearbtn.addEventListener('click', () => {
-  // Some action here
+// Milliseconds
+inputMillisecond.addEventListener("input", (e) => {
+  let valmilliSeconds = e.target.value;
+
+  inputNanosecond.value = (valmilliSeconds * 1000000).toExponential(3);
+  inputMicrosecond.value = valmilliSeconds * 1000;
+  inputSecond.value = valmilliSeconds / 1000;
+  inputMinute.value = (valmilliSeconds / 60000).toExponential(4);
+  inputHour.value = (valmilliSeconds / 3600000).toExponential(4);
+  inputDay.value = (valmilliSeconds / 86400000).toExponential(4);
+  inputWeek.value = (valmilliSeconds / 604800000).toExponential(4);
+  inputMonth.value = (valmilliSeconds / 2628000000).toExponential(4);
+  inputCalendarYear.value = (valmilliSeconds / 31540000000).toExponential(3);
+  inputDecade.value = (valmilliSeconds / 315400000000).toExponential(3);
+  inputCentury.value = (valmilliSeconds / 3154000000000).toExponential(3);
 });
 
-let timeFromDisplay = document.querySelector(".time-from-input");
-let timeToDisplay = document.querySelector(".time-to-input");
+// Seconds
+inputSecond.addEventListener("input", (e) => {
+  let valSeconds = e.target.value;
 
-let jk = document.getElementById("jk");
-
-timeFromDisplay.addEventListener('input', (e) => {
-  timeToDisplay.value = (e.target.value) * 2;
+  inputNanosecond.value = (valSeconds * 1000000000).toExponential(3);
+  inputMicrosecond.value = (valSeconds * 1000000).toExponential(3);
+  inputMillisecond.value = valSeconds * 1000;
+  inputMinute.value = valSeconds / 60;
+  inputHour.value = valSeconds / 3600;
+  inputDay.value = (valSeconds / 86400).toExponential(4);
+  inputWeek.value = (valSeconds / 604800).toExponential(4);
+  inputMonth.value = (valSeconds / 2628000).toExponential(4);
+  inputCalendarYear.value = (valSeconds / 31540000).toExponential(3);
+  inputDecade.value = (valSeconds / 354000000).toExponential(3);
+  inputCentury.value = (valSeconds / 3154000000).toExponential(3);
 });
 
+// Minutes
+inputMinute.addEventListener("input", (e) => {
+  let valMinutes = e.target.value;
 
+  inputNanosecond.value = (valMinutes * 60000000000).toExponential(3);
+  inputMicrosecond.value = (valMinutes * 60000000).toExponential(3);
+  inputMillisecond.value = valMinutes * 60000;
+  inputSecond.value = valMinutes * 60;
+  inputHour.value = valMinutes / 60;
+  inputDay.value = valMinutes / 1440;
+  inputWeek.value = (valMinutes / 10080).toExponential(4);
+  inputMonth.value = (valMinutes / 43800).toExponential(4);
+  inputCalendarYear.value = (valMinutes / 525600).toExponential(4);
+  inputDecade.value = (valMinutes / 5256000).toExponential(4);
+  inputCentury.value = (valMinutes / 52560000).toExponential(4);
+});
 
+// Hours
+inputHour.addEventListener("input", (e) => {
+  let valHours = e.target.value;
 
+  inputNanosecond.value = (valHours * 3600000000000).toExponential(3);
+  inputMicrosecond.value = (valHours * 3600000000).toExponential(3);
+  inputMillisecond.value = (valHours * 3600000).toExponential(3);
+  inputSecond.value = valHours * 3600;
+  inputMinute.value = valHours * 60;
+  inputDay.value = valHours / 24;
+  inputWeek.value = valHours / 168;
+  inputMonth.value = valHours / 730;
+  inputCalendarYear.value = valHours / 8760;
+  inputDecade.value = (valHours / 87600).toExponential(4);
+  inputCentury.value = (valHours / 876000).toExponential(4);
+});
+
+// Days
+inputDay.addEventListener("input", (e) => {
+  let valDays = e.target.value;
+
+  inputNanosecond.value = (valDays * 86400000000000).toExponential(3);
+  inputMicrosecond.value = (valDays * 86400000000).toExponential(3);
+  inputMillisecond.value = (valDays * 86400000).toExponential(3);
+  inputSecond.value = valDays * 86400;
+  inputMinute.value = valDays * 1440;
+  inputHour.value = valDays * 24;
+  inputWeek.value = valDays / 7;
+  inputMonth.value = valDays / 30.417;
+  inputCalendarYear.value = valDays / 365;
+  inputDecade.value = valDays / 3650;
+  inputCentury.value = (valDays / 36500).toExponential(4);
+});
+
+// Weeks
+inputWeek.addEventListener("input", (e) => {
+  let valWeeks = e.target.value;
+
+  inputNanosecond.value = (valWeeks * 604800000000000).toExponential(3);
+  inputMicrosecond.value = (valWeeks * 604800000000).toExponential(3);
+  inputMillisecond.value = (valWeeks * 604800000).toExponential(3);
+  inputSecond.value = valWeeks * 604800;
+  inputMinute.value = valWeeks * 10080;
+  inputHour.value = valWeeks * 168;
+  inputDay.value = valWeeks * 7;
+  inputMonth.value = valWeeks / 4.345;
+  inputCalendarYear.value = valWeeks / 52.143;
+  inputDecade.value = valWeeks / 521.4;
+  inputCentury.value = valWeeks / 5214;
+});
+
+// Months
+inputMonth.addEventListener("input", (e) => {
+  let valMonths = e.target.value;
+
+  inputNanosecond.value = (valMonths * 2628000000000000).toExponential(3);
+  inputMicrosecond.value = (valMonths * 2628000000000).toExponential(3);
+  inputMillisecond.value = (valMonths * 2628000000).toExponential(3);
+  inputSecond.value = (valMonths * 2628000).toExponential(3);
+  inputMinute.value = valMonths * 43800;
+  inputHour.value = valMonths * 730;
+  inputDay.value = valMonths * 30.417;
+  inputWeek.value = valMonths * 4.345;
+  inputCalendarYear.value = valMonths / 12;
+  inputDecade.value = valMonths / 120;
+  inputCentury.value = valMonths / 1200;
+});
+
+// Calendaryear
+inputCalendarYear.addEventListener("input", (e) => {
+  let valCalendarYears = e.target.value;
+
+  inputNanosecond.value = (valCalendarYears * 31540000000000000).toExponential(
+    3
+  );
+  inputMicrosecond.value = (valCalendarYears * 31540000000000).toExponential(3);
+  inputMillisecond.value = (valCalendarYears * 31540000000).toExponential(3);
+  inputSecond.value = (valCalendarYears * 31540000).toExponential(3);
+  inputMinute.value = valCalendarYears * 525600;
+  inputHour.value = valCalendarYears * 8760;
+  inputDay.value = valCalendarYears * 365;
+  inputWeek.value = valCalendarYears * 52.143;
+  inputMonth.value = valCalendarYears * 12;
+  inputDecade.value = valCalendarYears / 10;
+  inputCentury.value = valCalendarYears / 100;
+});
+
+// Decade
+inputDecade.addEventListener("input", (e) => {
+  let valDecades = e.target.value;
+
+  inputNanosecond.value = (valDecades * 315400000000000000).toExponential(3);
+  inputMicrosecond.value = (valDecades * 315400000000000).toExponential(3);
+  inputMillisecond.value = (valDecades * 315400000000).toExponential(3);
+  inputSecond.value = (valDecades * 315400000).toExponential(3);
+  inputMinute.value = (valDecades * 5256000).toExponential(3);
+  inputHour.value = valDecades * 87600;
+  inputDay.value = valDecades * 3650;
+  inputWeek.value = valDecades * 521.4;
+  inputMonth.value = valDecades * 120;
+  inputCalendarYear.value = valDecades * 10;
+  inputCentury.value = valDecades / 10;
+});
+
+// Century
+inputCentury.addEventListener("input", (e) => {
+  let valCenturies = e.target.value;
+
+  inputNanosecond.value = (valCenturies * 3154000000000000000).toExponential(3);
+  inputMicrosecond.value = (valCenturies * 3154000000000000).toExponential(3);
+  inputMillisecond.value = (valCenturies * 3154000000000).toExponential(3);
+  inputSecond.value = (valCenturies * 3154000000).toExponential(3);
+  inputMinute.value = (valCenturies * 52560000).toExponential(3);
+  inputHour.value = valCenturies * 876000;
+  inputDay.value = valCenturies * 36500;
+  inputWeek.value = valCenturies * 5214;
+  inputMonth.value = valCenturies * 1200;
+  inputCalendarYear.value = valCenturies * 100;
+  inputDecade.value = valCenturies * 10;
+});
+
+//CLEAR FIELDS
+btnClear.addEventListener("click", () => {
+  inputSecond.value = null;
+  inputNanosecond.value = null;
+  inputMicrosecond.value = null;
+  inputMillisecond.value = null;
+  inputMinute.value = null;
+  inputHour.value = null;
+  inputDay.value = null;
+  inputWeek.value = null;
+  inputMonth.value = null;
+  inputCalendarYear.value = null;
+  inputDecade.value = null;
+  inputCentury.value = null;
+});

@@ -18,7 +18,7 @@
 <body>
 <main>
     <section class="temperature"  style="display:none;">
- <div class = "-temperature-panel">
+ <div class = "temperature-panel">
 
     <form class ="form1">
 
@@ -131,59 +131,73 @@
 
 <!-- Time conversion -->
 
-<section class="time-panel">
-    <form name="time">
-        <div class="container-from">
-        <select name="time" class="select_option select-from-time">
-            <option value="Second">Second</option>
-            <option value="nanosecond">Nanosecond</option>
-            <option value="microsecond">Microsecond</option>
-            <option value="millsecond">Millsecond</option>
-            <option value="minute">Minute</option>
-            <option value="hour">Hour</option>
-            <option value="day">Day</option>
-            <option value="week">Week</option>
-            <option value="Month">Month</option>
-            <option value="calendar-year">Calendar year</option>
-            <option value="decade">Decade</option>
-            <option value="century">Century</option>
-        </select>
+<section class="time-panel" tyle="display:none;">
+    <form name="time" class="container-time">    
 
-        <div class= "from-time-input">
-        <input type= "number" name="time-from" class= "time-input-labels time-from-input" placeholder="0"/>
+
+        <div class="time-label">   
+        <label for="nanosecond" name="time" class="time-units">Nanosecond</label>
+            <input type= "number" name="time-from" class= "time-input nanosecond"/>
         </div>
-    </form> 
-  </div>
 
-
- <form class="container-to">
-            <select name="time" class="select_option select-to-time" id= "mySelect">
-            <option value="minute">Minute</option>
-            <option value="nanosecond">Nanosecond</option>
-            <option value="microsecond">Microsecond</option>
-            <option value="millsecond">Millsecond</option>
-            <option value="Second">Second</option>
-            <option value="hour">Hour</option>
-            <option value="day">Day</option>
-            <option value="week">Week</option>
-            <option value="Month">Month</option>
-            <option value="calendar-year">Calendar year</option>
-            <option value="decade">Decade</option>
-            <option value="century">Century</option>
-        </select>
-        
-        <div class= "to_output">
-        <input type= "number" class= "input-labels time-to-input" placeholder="0">
+        <div class="time-label">   
+        <label for="microsecond" name="time" class="time-units">Microsecond</label>
+            <input type= "number" name="time-from" class= "time-input microsecond"/>
         </div>
-    </form>
+
+        <div class="time-label">   
+        <label for="millisecond" name="time" class="time-units">Millisecond</label>
+            <input type= "number" name="time-from" class= "time-input millisecond"/>
+        </div>
+
+         <div class="time-label">   
+        <label for="second" name="time" class="time-units">Second</label>
+            <input type= "number" name="time-from" class= "time-input second"/>
+        </div>
         
-   <button class="buttons2 reset2 reset-btn time-clear-btn">Clear</button>
- </div>
-        
+        <div class="time-label">   
+        <label for="minute" name="time" class="time-units">Minute</label>
+            <input type= "number" name="time-from" class= "time-input minute"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="hour" name="time" class="time-units">Hour</label>
+            <input type= "number" name="time-from" class= "time-input hour"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="day" name="time" class="time-units">Day</label>
+            <input type= "number" name="time-from" class= "time-input day"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="week" name="time" class="time-units">Week</label>
+            <input type= "number" name="time-from" class= "time-input week"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="month" name="time" class="time-units">Month</label>
+            <input type= "number" name="time-from" class= "time-input month"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="calendar-year" name="time" class="time-units">Calendar Year</label>
+            <input type= "number" name="time-from" class= "time-input calendar-year"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="decade" name="time" class="time-units">Decade</label>
+            <input type= "number" name="time-from" class= "time-input decade"/>
+        </div>
+
+        <div class="time-label">   
+        <label for="century" name="time" class="time-units">Century</label>
+            <input type= "number" name="time-from" class= "time-input century"/>
+        </div>
+        <button for="clear" type="submit" class="clear-time-btn">Clear</button>
+        </form> 
+ </div> 
   </section>
-
-
-
 </main>
 
 <script src="converter.js"></script>
