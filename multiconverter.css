@@ -237,7 +237,7 @@ main {
   z-index: 5;
   transform: translate(15%, -255%);
   border-radius: 10px;
-  box-shadow: 10px 20px 500px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 20px 500px 10px rgba(65, 20, 59, 0.2);
    opacity: .9;
 }
 
@@ -279,7 +279,7 @@ main {
   width: 320px;
   height: 450px;
   background-color: rgba(233, 250, 243, 0.5);
-  box-shadow: 10px 20px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 20px 20px 0 rgba(5, 50, 44, 0.2);
   border-radius: 20px;
   margin: auto;
   margin-top: 100px;
@@ -440,7 +440,7 @@ main {
   z-index: 5;
   transform: translate(0%, -255%);
   border-radius: 10px;
-  box-shadow: 10px 20px 500px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 20px 500px 10px rgba(35, 2, 45, 0.2);
    opacity: 0.8;
 }
 
@@ -480,26 +480,26 @@ main {
   align-items: center;
   width: 320px;
   height: 450px;
-  background-color: rgba(233, 250, 243, 0.5);
+  background-color: #fefdff;
   box-shadow: 10px 20px 20px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin: auto;
   margin-top: 100px;
-  border-top: #129068 solid 3px;
-  border-left: #129068 solid 1px;
-  border-right: #129068 solid 10px;
-  border-bottom: #129068 solid 10px;
+  border-top: #2f0e6c solid 3px;
+  border-left: #2f0e6c solid 1px;
+  border-right: #2f0e6c solid 10px;
+  border-bottom: #2f0e6c solid 10px;
 
 }
 
 .container-time {
   display: flex;
   flex-direction: column;
-  margin-top: 13px;
-  margin-left: 5px;
-  background-color: #def2e4;
+  margin-top: 7px;
+  margin-left: 4px;
+  background-color: #210454;
   gap: 5px;
-  border: #d5f0e8 groove 5px;
+  border: #f3effa groove 10px;
   border-radius: 10px;
   padding: 5px 15px;
   width: 260px;
@@ -508,29 +508,30 @@ main {
 
 .time-input {
   font-size: 18px;
-  background-color: #dfeee9;
-  color:  #16a57a;
+  background-color: #e2dced;
+  color:  #330c7a;
   font-weight: 600;
-  border: #e6faf4 inset 2px;
   text-align: center;
   width: 130px;
   margin-left: -10px;
   height: 20px;
-  border-radius: 10px;
+  border: #faf7ff solid 1px;
+  border-radius: 9px;
 }
 .time-units{
-  color: #def2e4;
-  font-size: 14px;
+  color: #f4f2f9;
+  font-size: 17px;
+  letter-spacing: 0.3px;
   font-weight:bold;
-  background-color: #1f916f;
+  background-color: #542a9880;
   width: 120px;
   height: 15px;
   padding: 3px;
   padding-left: 5px;
-  margin-left: -3px;
+  margin-left: -6px;
   margin-top: 2px;
-  border: none;
-  border-radius: 10px;
+  border: #9f6def inset 1px;
+  border-radius: 9px;
 }
 
 .time-label{
@@ -541,32 +542,33 @@ main {
 }
 
 .clear-time-btn {
-  color: #def2e4;
-  background-color: #0e644a;
-  font-size: 16px;
+  color: #ece6f2;
+  background-color: #260362;
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 25px;
+  margin-top: 7px;
+  letter-spacing: 1px;
+  border-radius: 20px;
   border: outset 3px;
   padding: 5px 0;
   width: 200px;
-  margin-top: 3px;
   margin-left: 25px;
 }
 
 .clear-time-btn:hover {
   width: 203px;
-   background-color: #10906a;
-  font-size: 17px;
+   background-color: #350c7b;
+  font-size: 19px;
   cursor: pointer;
-  box-shadow: 2px 10px 10px 0 rgba(0, 0, 0, 0.2);
-  animation: all .5s ease-in;
+  box-shadow: 2px 5px 5px 0 #402673;
+  animation: all .5s ease-out;
 }
 
 .clear-time-btn:active {
   width: 195px;
-  font-size: 16px;
+  font-size: 18px;
 } 
 
 .buttons2:active {
-  box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 3px 3px 0 #f0edf7
 }

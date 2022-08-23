@@ -81,10 +81,10 @@ function temperature() {
   });
 
   reset.addEventListener("click", () => {
-    celsiusInput.value = "0.0";
-    fahrenheitInput.value = "0.0";
-    celsiusInput2.value = "0.0";
-    fahrenheitInput2.value = "0.0";
+    celsiusInput.value = null;
+    fahrenheitInput.value = null;
+    celsiusInput2.value = null;
+    fahrenheitInput2.value = null;
   });
 }
 temperature();
@@ -204,19 +204,19 @@ function weight() {
       toDisplay.value = fromInput.value;
     }
     if (fromValue === "tonne" && toValue === "kilogram") {
-      toDisplay.value = fromInput.value / 1000;
+      toDisplay.value = fromInput.value * 1000;
     }
     if (fromValue === "tonne" && toValue === "gram") {
-      toDisplay.value = fromInput.value * 1000000;
+      toDisplay.value = (fromInput.value * 1000000);
     }
     if (fromValue === "tonne" && toValue === "milligram") {
-      toDisplay.value = fromInput.value * 1000000000;
+      toDisplay.value = (fromInput.value * 1000000000).toExponential(0);
     }
     if (fromValue === "tonne" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 1000000000000;
+      toDisplay.value = (fromInput.value * 1000000000000).toExponential(0);
     }
     if (fromValue === "tonne" && toValue === "imperial-ton") {
-      toDisplay.value = fromInput.value / 0.984207;
+      toDisplay.value = (fromInput.value / 1.016).toFixed(6);
     }
     if (fromValue === "tonne" && toValue === "us-ton") {
       toDisplay.value = fromInput.value * 1.10231;
@@ -245,16 +245,16 @@ function weight() {
       toDisplay.value = fromInput.value * 1000000;
     }
     if (fromValue === "kilogram" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 1000000000;
+      toDisplay.value = (fromInput.value * 1000000000).toExponential(0);
     }
     if (fromValue === "kilogram" && toValue === "imperial-ton") {
-      toDisplay.value = fromInput.value / 0.000984207;
+      toDisplay.value = (fromInput.value / 1016).toFixed(8);
     }
     if (fromValue === "kilogram" && toValue === "us-ton") {
-      toDisplay.value = fromInput.value / 0.00110231;
+      toDisplay.value = (fromInput.value / 907.159).toFixed(7);
     }
     if (fromValue === "kilogram" && toValue === "stone") {
-      toDisplay.value = fromInput.value / 0.157473;
+      toDisplay.value = (fromInput.value / 6.3502949712).toFixed(6);
     }
     if (fromValue === "kilogram" && toValue === "pound") {
       toDisplay.value = fromInput.value * 2.20462;
@@ -283,7 +283,7 @@ function weight() {
       toDisplay.value = fromInput.value * 0.00000098421;
     }
     if (fromValue === "gram" && toValue === "us-ton") {
-      toDisplay.value = fromInput.value * 0.0000011023;
+      toDisplay.value = (fromInput.value * 0.0000011023).toExponential(4);
     }
     if (fromValue === "gram" && toValue === "stone") {
       toDisplay.value = fromInput.value * 0.000157473;
@@ -318,13 +318,13 @@ function weight() {
       toDisplay.value = fromInput.value * 0.0000000011023;
     }
     if (fromValue === "milligram" && toValue === "stone") {
-      toDisplay.value = fromInput.value / 0.00000015747;
+      toDisplay.value = (fromInput.value * 0.00000015747).toExponential(4);
     }
     if (fromValue === "milligram" && toValue === "pound") {
-      toDisplay.value = fromInput.value * 0.0000022046;
+      toDisplay.value = (fromInput.value * 0.0000022046).toExponential(4);
     }
     if (fromValue === "milligram" && toValue === "ounce") {
-      toDisplay.value = fromInput.value * 0.000035274;
+      toDisplay.value = (fromInput.value * 0.000035274).toExponential(4);
     }
 
     // Microgram (μg)
@@ -370,13 +370,13 @@ function weight() {
       toDisplay.value = fromInput.value * 1016.05;
     }
     if (fromValue === "imperial-ton" && toValue === "gram") {
-      toDisplay.value = fromInput.value * 1016000;
+      toDisplay.value = (fromInput.value * 1016000).toExponential(3);
     }
     if (fromValue === "imperial-ton" && toValue === "milligram") {
-      toDisplay.value = fromInput.value * 1016000000;
+      toDisplay.value = (fromInput.value * 1016000000).toExponential(3);
     }
     if (fromValue === "imperial-ton" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 1016000000000;
+      toDisplay.value = (fromInput.value * 1016000000000).toExponential(3);
     }
     if (fromValue === "imperial-ton" && toValue === "us-ton") {
       toDisplay.value = fromInput.value * 1.12;
@@ -405,10 +405,10 @@ function weight() {
       toDisplay.value = fromInput.value * 907185;
     }
     if (fromValue === "us-ton" && toValue === "milligram") {
-      toDisplay.value = fromInput.value * 9.072;
+      toDisplay.value = (fromInput.value * 907200000).toExponential(3);
     }
     if (fromValue === "us-ton" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 9.072;
+      toDisplay.value = (fromInput.value * 907200000000).toExponential(3);
     }
     if (fromValue === "us-ton" && toValue === "imperial-ton") {
       toDisplay.value = fromInput.value * 0.892857;
@@ -437,10 +437,10 @@ function weight() {
       toDisplay.value = fromInput.value * 6350.29;
     }
     if (fromValue === "stone" && toValue === "milligram") {
-      toDisplay.value = fromInput.value * 6.35;
+      toDisplay.value = (fromInput.value * 6350000).toExponential(2);
     }
     if (fromValue === "stone" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 6.35;
+      toDisplay.value = (fromInput.value * 6350000000).toExponential(2);
     }
     if (fromValue === "stone" && toValue === "imperial-ton") {
       toDisplay.value = fromInput.value * 0.00625;
@@ -472,7 +472,7 @@ function weight() {
       toDisplay.value = fromInput.value * 453592;
     }
     if (fromValue === "pound" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 4.536;
+      toDisplay.value = (fromInput.value * 453600000).toExponential(3);
     }
     if (fromValue === "pound" && toValue === "imperial-ton") {
       toDisplay.value = fromInput.value * 0.000446429;
@@ -492,7 +492,7 @@ function weight() {
       toDisplay.value = fromInput.value;
     }
     if (fromValue === "ounce" && toValue === "tonne") {
-      toDisplay.value = fromInput.value * 0.00002835;
+      toDisplay.value = (fromInput.value * 0.00002835).toExponential(4);
     }
     if (fromValue === "ounce" && toValue === "kilogram") {
       toDisplay.value = fromInput.value * 0.0283495;
@@ -504,13 +504,13 @@ function weight() {
       toDisplay.value = fromInput.value * 28349.5;
     }
     if (fromValue === "ounce" && toValue === "microgram") {
-      toDisplay.value = fromInput.value * 2.835;
+      toDisplay.value = (fromInput.value * 28350000).toExponential(4);
     }
     if (fromValue === "ounce" && toValue === "imperial-ton") {
-      toDisplay.value = fromInput.value * 0.000027902;
+      toDisplay.value = (fromInput.value * 0.000027902).toExponential(4);
     }
     if (fromValue === "ounce" && toValue === "us-ton") {
-      toDisplay.value = fromInput.value * 0.00003125;
+      toDisplay.value = (fromInput.value * 0.00003125).toExponential(3);
     }
     if (fromValue === "ounce" && toValue === "stone") {
       toDisplay.value = fromInput.value * 0.00446429;
@@ -530,8 +530,8 @@ function weight() {
   });
 
   resetWeight.addEventListener("click", () => {
-    fromInput.value = "0";
-    toDisplay.value = "0";
+    fromInput.value = null;
+    toDisplay.value = null;
   });
 }
 weight();
