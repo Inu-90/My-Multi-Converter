@@ -17,6 +17,13 @@
 
 <body>
 <main>
+    <h2 class="heading"> Multi Converter</h2>
+    <nav class="display-nav">
+        <button for="mass-panel" type="submit" class="btn-mass-display selection-btns">Mass</button>
+        <button for="temperature-panel" type="submit" class="btn-temperature-display selection-btns">Temperature</button>
+          <button for="time-panel" type="submit" class="btn-time-display selection-btns">Time</button>
+    </nav>
+
     <section class="temperature"  style="display:none;">
  <div class = "temperature-panel">
 
@@ -57,8 +64,8 @@
     </fieldset>
 </form>
     
-    <button class= "buttons1 convert1">Convert</button>
-   <button class="buttons1 reset1">Clear</button>
+    <button class= "buttons-temperature convert-temperature">Convert</button>
+   <button class="buttons-temperature reset-temperature">Clear</button>
  </div>
 
  <div class="temperature-alert" style= "display:none;">
@@ -70,7 +77,7 @@
 
 <!-- MASS !-->
 
-<section class="mass-panel" style="display:none;">
+<section class="mass-panel" tyle="display:none;">
     <form name="mass">
         <div class="from_container">
             <label for="mass" class="from">From:</label>
@@ -117,13 +124,13 @@
         </div>
     </form>
         
-    <button type="submit" class= "buttons2 convert2 convert-btn">Convert</button>
-   <button class="buttons2 reset2 reset-btn">Clear</button>
+    <button type="submit" class= "buttons-mass convert-mass convert-btn">Convert</button>
+   <button class="buttons-mass reset-mass reset-btn">Clear</button>
  </div>
 
- <div class="alert-display" style= "display:none;">
+ <div class="mass-alert-display" style= "display:none;">
             <h>Please select a unit to convert</h>
-        <button type = submit class= "alert-button">ok</button>
+        <button type = submit class= "mass-alert-button">ok</button>
         </div>
         
   </section>
@@ -131,7 +138,7 @@
 
 <!-- Time conversion -->
 
-<section class="time-panel" tyle="display:none;">
+<section class="time-panel" style="display:none;">
     <form name="time" class="container-time">    
 
 
@@ -194,12 +201,12 @@
         <label for="century" name="time" class="time-units">Century</label>
             <input type= "number" name="time-from" class= "time-input century"/>
         </div>
-        <button for="clear" type="submit" class="clear-time-btn">Clear</button>
-        </form> 
- </div> 
+    </form> 
+    <button for="clear" type="submit" class="clear-time-btn">Clear</button>
+</div> 
   </section>
-</main>
 
+</main>
 <script src="converter.js"></script>
 
 </body>

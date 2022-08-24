@@ -1,12 +1,85 @@
 
 
-main {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .body {
   font-family: "Roboto", sans-serif;
+  display: grid;
+}
+
+.heading{
+   color: #f7fbf9;
+  background-color: #190540;
+  margin-top: -30px;
+  padding-left: 70px;
+  border-radius: 20px;
+}
+
+
+main{
+  position: relative;
+  display: grid;
+  place-content: center;
+  background-color: rgba(211, 131, 254, 0.95);
+  margin: auto;
+  width: 500px;
+  height: 95vh; 
+  border: #f3f4f7 solid 5px;
+  border-radius: 15px;
+}
+
+.display-nav{
+  margin-left: -20px;
+  margin-bottom: -15px;
+}
+
+.selection-btns {
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  border-radius: 13px;
+  border: outset 3px;
+  padding: 5px 0;
+  width: 100px;
+  margin-left: 1px;
+  cursor: pointer;
+}
+  .selection-btns:hover {
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 2px 5px 5px 0 #d7dcde;
+  animation: all .5s ease-out;
+}
+
+ .selection-btns:active {
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 5px 5px 0 #d7dcde;
+  animation: all .5s ease-out;
+}
+
+.selection-btns:visited {
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 5px 5px 0 #d7dcde;
+  animation: all .5s ease-out;
+}
+
+.btn-mass-display {
+  color: #def2e4;
+  background-color: #0e644a;
+}
+
+
+.btn-temperature-display{
+  width: 150px;
+  color: #ffdef0;
+  background-color: #3f20a6;
+}
+
+.btn-time-display{
+   color: #ece6f2;
+   background-color: #260362;
 }
 
 .temperature-panel {
@@ -14,19 +87,35 @@ main {
   font-weight: 600;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
-  width: 310px;
+  width: 320px;
   height: 450px;
   background-color: #f3cdfd;
   box-shadow: 10px 20px 20px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: auto;
-  margin-top: 100px;
+  margin-top: 35px;
   border-top: #cc5de8 solid 3px;
   border-left: #cc5de8 solid 1px;
   border-right: #cc5de8 solid 10px;
   border-bottom: #cc5de8 solid 10px;
+  
+  animation-name: temperatureAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes temperatureAnimation {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+     transform: translateX(0px);
+  }
 }
 
 .fieldset {
@@ -131,6 +220,7 @@ main {
   margin-left: 10px;
 }
 
+
 .fahr {
   margin-left: 20px;
 }
@@ -154,6 +244,11 @@ main {
   border-radius: 6px;
 }
 
+.celsius_label:hover{
+   font-size: 26px;
+}
+
+
 .fahrenheit_label {
   background-color: transparent;
   color: #5f3dc4;
@@ -165,7 +260,11 @@ main {
   border-radius: 6px;
 }
 
-.convert1 {
+.fahrenheit_label:hover{
+   font-size: 26px;
+}
+
+.convert-temperature {
   color: #d1bfc9;
   margin-top: -40px;
   width: 200px;
@@ -175,7 +274,7 @@ main {
   border: outset 2px;
 }
 
-.buttons1 {
+.buttons-temperature {
   color: #d1bfc9;
   background-color: #3f20a6;
   font-size: 22px;
@@ -185,35 +284,35 @@ main {
   padding: 5px 0;
 }
 
-.buttons1:hover {
+.buttons-temperature:hover {
   background-color: #3412bd;
   font-size: 25px;
   cursor: pointer;
   box-shadow: 2px 10px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.buttons1:active {
+.buttons-temperature:active {
   box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.convert1:hover {
+.convert-temperature:hover {
   width: 210px;
 }
 
-.convert1:active {
+.convert-temperature:active {
   width: 180px;
   font-size: 22px;
 }
 
-.reset1 {
+.reset-temperature {
   width: 150px;
 }
 
-.reset1:hover {
+.reset-temperature:hover {
   width: 160px;
 }
 
-.reset1:active {
+.reset-temperature:active {
   width: 130px;
   font-size: 22px;
 }
@@ -221,7 +320,7 @@ main {
 
 .temperature-alert {
   display: block;
-  position: relative;
+  position: absolute;
   font: 24px;
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 800;
@@ -234,13 +333,14 @@ main {
   padding: 20px;
   height: 100px;
   width: 200px;
+  margin-top: -40px;
+  margin-bottom: -100px;
   z-index: 5;
-  transform: translate(15%, -255%);
+  transform: translate(20%, 115%);
   border-radius: 10px;
-  box-shadow: 10px 20px 500px 10px rgba(65, 20, 59, 0.2);
-   opacity: .9;
+  box-shadow: 10px 20px 500px 100px rgba(65, 20, 59, 0.2);
+  opacity: .9;
 }
-
 
 .temperature-alert-button {
   color: #d1bfc9;
@@ -264,9 +364,6 @@ main {
 }
 
 
-
-
-
 /* For Mass */
 
 .mass-panel {
@@ -278,17 +375,34 @@ main {
   align-items: center;
   width: 320px;
   height: 450px;
-  background-color: rgba(233, 250, 243, 0.5);
+  background-color: rgba(233, 250, 243, 0.9);
   box-shadow: 10px 20px 20px 0 rgba(5, 50, 44, 0.2);
   border-radius: 20px;
-  margin: auto;
-  margin-top: 100px;
+  margin-top: 35px;
   border-top: #129068 solid 3px;
   border-left: #129068 solid 1px;
   border-right: #129068 solid 10px;
   border-bottom: #129068 solid 10px;
 
+  animation-name: massAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
+
+
+@keyframes massAnimation {
+  
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+     transform: translateY(0px);
+  }
+}
+
 
 .from_container {
   display: flex;
@@ -337,7 +451,6 @@ main {
   border-radius: 10px;
 }
 
-
 .to_container {
   display: flex;
   flex-direction: column;
@@ -349,6 +462,17 @@ main {
   border-bottom-right-radius: 20px;
   padding-left: 15px;
   width: 260px;
+}
+
+.from_container:hover {
+  width: 265px;
+  padding-left: 17px;
+}
+
+.to_container:hover {
+ width: 265px;
+ padding-left: 17px;
+ 
 }
 
 .to{
@@ -370,7 +494,7 @@ main {
   width: 290px;
 }
 
-.convert2 {
+.convert-mass {
   margin-top: -15px;
   width: 200px;
   font-size: 22px;
@@ -379,7 +503,7 @@ main {
   border: outset 2px;
 }
 
-.buttons2 {
+.buttons-mass {
   color: #def2e4;
   background-color: #0e644a;
   font-size: 22px;
@@ -389,7 +513,7 @@ main {
   padding: 5px 0;
 }
 
-.buttons2:hover {
+.buttons-mass:hover {
   background-color: #10906a;
   font-size: 25px;
   cursor: pointer;
@@ -397,36 +521,36 @@ main {
   animation: all .5s ease-in;
 }
 
-.buttons2:active {
+.buttons-mass:active {
   box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.convert2:hover {
+.convert-mass:hover {
   width: 210px;
 }
 
-.convert2:active {
+.convert-mass:active {
   width: 180px;
   font-size: 22px;
 }
 
-.reset2 {
+.reset-mass {
   width: 150px;
   margin-top: -15px;
 }
 
-.reset2:hover {
+.reset-mass:hover {
   width: 160px;
 }
 
-.reset2:active {
+.reset-mass:active {
   width: 130px;
   font-size: 22px;
 } 
 
-.alert-display {
+.mass-alert-display {
   display: block;
-  position: relative;
+  position: absolute;
   font: 10px;
   color:  #def2e4;
   text-align: center;
@@ -438,15 +562,15 @@ main {
   height: 100px;
   width: 200px;
   z-index: 5;
-  transform: translate(0%, -255%);
+  transform: translate(0%, 70%);
   border-radius: 10px;
-  box-shadow: 10px 20px 500px 10px rgba(35, 2, 45, 0.2);
+  box-shadow: 10px 20px 500px 100px rgba(35, 2, 45, 0.2);
    opacity: 0.8;
 }
 
-.alert-button {
+.mass-alert-button {
   color: #def2e4;
-  background-color: #0c6349;;
+  background-color: #094432;;
   font-size: 24px;
   font-weight: bold;
   border-radius: 25px;
@@ -460,12 +584,12 @@ main {
   opacity: 1;
 }
 
-.alert-button:hover {
-  color: #def2e4;
+.mass-alert-button:hover {
+  background-color: #0c6349 ;
 }
 
-.alert-button:active {
-   background-color: #022b1f;
+.mass-alert-button:active {
+   background-color: #094432;
 } 
 
 
@@ -483,16 +607,34 @@ main {
   background-color: #fefdff;
   box-shadow: 10px 20px 20px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: auto;
-  margin-top: 100px;
+  margin-top: 35px;
   border-top: #2f0e6c solid 3px;
   border-left: #2f0e6c solid 1px;
   border-right: #2f0e6c solid 10px;
   border-bottom: #2f0e6c solid 10px;
+  transition: 1.5s ease-in-out;
 
+  animation-name: timeAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
+
+@keyframes timeAnimation {
+  from {
+    transform: translateX(100px);
+  }
+
+  to {
+     transform: translateY(0px);
+  }
+}
+
+
 .container-time {
+  position:relative;
   display: flex;
   flex-direction: column;
   margin-top: 7px;
@@ -525,13 +667,20 @@ main {
   font-weight:bold;
   background-color: #542a9880;
   width: 120px;
-  height: 15px;
-  padding: 3px;
+  height: 17px;
+  padding-bottom: 3px;
   padding-left: 5px;
   margin-left: -6px;
   margin-top: 2px;
   border: #9f6def inset 1px;
   border-radius: 9px;
+}
+.time-units:hover{
+ width: 125px;
+}
+.time-input:hover{
+  width: 135px;
+  height: 21px;
 }
 
 .time-label{
@@ -542,33 +691,36 @@ main {
 }
 
 .clear-time-btn {
+  position: absolute;
   color: #ece6f2;
   background-color: #260362;
   font-size: 18px;
   font-weight: bold;
-  margin-top: 7px;
   letter-spacing: 1px;
   border-radius: 20px;
   border: outset 3px;
   padding: 5px 0;
   width: 200px;
-  margin-left: 25px;
+  transform: translate(0%, 1030%);
 }
 
 .clear-time-btn:hover {
   width: 203px;
-   background-color: #350c7b;
+  background-color: #350c7b;
+  margin-top: -10px;
   font-size: 19px;
   cursor: pointer;
   box-shadow: 2px 5px 5px 0 #402673;
   animation: all .5s ease-out;
+  
 }
 
 .clear-time-btn:active {
   width: 195px;
   font-size: 18px;
+  margin-top: -1px;
 } 
 
-.buttons2:active {
-  box-shadow: 2px 3px 3px 0 #f0edf7
+.clear-time-btn:active {
+  box-shadow: 2px 3px 3px 0 #5e5478
 }
