@@ -528,8 +528,8 @@
   });
 
   resetWeight.addEventListener("click", () => {
-    fromInput.value = null;
-    toDisplay.value = null;
+    fromInput.value = undefined;
+    toDisplay.value = undefined;
   });
 
 
@@ -768,24 +768,25 @@
 
   //CLEAR FIELDS
   btnClear.addEventListener("click", () => {
-    inputSecond.value = null;
-    inputNanosecond.value = null;
-    inputMicrosecond.value = null;
-    inputMillisecond.value = null;
-    inputMinute.value = null;
-    inputHour.value = null;
-    inputDay.value = null;
-    inputWeek.value = null;
-    inputMonth.value = null;
-    inputCalendarYear.value = null;
-    inputDecade.value = null;
-    inputCentury.value = null;
+    inputSecond.value = undefined;
+    inputNanosecond.value = undefined;
+    inputMicrosecond.value = undefined;
+    inputMillisecond.value = undefined;
+    inputMinute.value = undefined;
+    inputHour.value = undefined;
+    inputDay.value = undefined;
+    inputWeek.value = undefined;
+    inputMonth.value = undefined;
+    inputCalendarYear.value = undefined;
+    inputDecade.value = undefined;
+    inputCentury.value = undefined;
   });
 
 let massPanel = document.querySelector(".mass-panel");
 let temperaturePanel = document.querySelector(".temperature");
 
-
+let heading = document.querySelector(".heading");
+let main = document.querySelector("main");
 let btnMass = document.querySelector(".btn-mass-display");
 let btnTemperature = document.querySelector(".btn-temperature-display");
 let btnTime = document.querySelector(".btn-time-display");
@@ -794,16 +795,95 @@ btnMass.addEventListener("click", () => {
   massPanel.style.display = "flex";
   timePanel.style.display = "none";
   temperaturePanel.style.display = "none";
+
+
+  btnMass.style.borderColor = "cyan";
+  btnMass.style.color = "#adfade";
+  btnMass.style.fontSize = "26px";
+  btnMass.style.backgroundColor = "#073c27f2";
+  btnTemperature.style.borderRadius = "15px";
+  
+  main.style.backgroundColor = "#0f4932f2";
+  heading.style.color = "#083325";
+  heading.style.backgroundColor = "#e9faf3e6"
+
+  btnTemperature.style.borderColor = "white";
+  btnTemperature.style.borderRadius = "20px";
+  btnTemperature.style.backgroundColor = "#2c1687";
+  btnTemperature.style.color = "#d2cfcf";
+  btnTemperature.style.border = "outset 3px";
+  btnTemperature.style.fontSize = "22px";
+
+  btnTime.style.borderColor = "white";
+  btnTime.style.borderRadius = "20px";
+  btnTime.style.backgroundColor = "#260362";
+  btnTime.style.color = "#d2cfcf";
+  btnTime.style.border = "outset 3px";
+  btnTime.style.fontSize = "22px";
+
+
+  //width: 170px;
+
 });
 
 btnTemperature.addEventListener("click", () => {
   temperaturePanel.style.display = "flex";
   massPanel.style.display = "none";
   timePanel.style.display = "none";
+  
+  btnTemperature.style.borderColor = "cyan";
+  btnTemperature.style.color = "#ffdef0";
+  btnTemperature.style.fontSize = "26px";
+  btnTemperature.style.backgroundColor = "#2c1687";
+  btnTemperature.style.borderRadius = "15px";
+
+  main.style.backgroundColor = "#f5acfb";
+  heading.style.color = "#2c1687";
+  heading.style.backgroundColor = "#fed8fb";
+
+ btnMass.style.borderColor = "white";
+ btnMass.style.borderRadius = "20px";
+ btnMass.style.backgroundColor = "#073c27f2";
+ btnMass.style.color = "#d2cfcf";
+ btnMass.style.border = "outset 3px";
+ btnMass.style.fontSize = "22px";
+
+ btnTime.style.borderColor = "white";
+ btnTime.style.borderRadius = "20px";
+ btnTime.style.backgroundColor = "#260362";
+ btnTime.style.color = "#d2cfcf";
+ btnTime.style.border = "outset 3px";
+ btnTime.style.fontSize = "22px";
 });
 
 btnTime.addEventListener("click", () => {
   timePanel.style.display = "flex";
   massPanel.style.display = "none";
   temperaturePanel.style.display = "none";
+
+
+  btnTime.style.borderColor = "cyan";
+  btnTime.style.color = "#ffffff";
+  btnTime.style.fontSize = "26px";
+  btnTime.style.backgroundColor = "#2c066f";
+  btnTime.style.borderRadius = "15px";
+
+  main.style.backgroundColor = "#b09ad6";
+  heading.style.color = "#ffffff";
+  heading.style.backgroundColor = "#2c066f";
+
+  btnTemperature.style.borderColor = "white";
+  btnTemperature.style.borderRadius = "20px";
+  btnTemperature.style.backgroundColor = "#2c1687";
+  btnTemperature.style.color = "#d2cfcf";
+  btnTemperature.style.border = "outset 3px";
+  btnTemperature.style.fontSize = "22px";
+
+  btnMass.style.borderColor = "white";
+  btnMass.style.borderRadius = "20px";
+  btnMass.style.backgroundColor = "#073c27f2";
+  btnMass.style.color = "#d2cfcf";
+  btnMass.style.border = "outset 3px";
+  btnMass.style.fontSize = "22px";
+
 });
